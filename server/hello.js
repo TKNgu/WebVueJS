@@ -8,7 +8,7 @@ module.exports = (req, res, next) => {
 	if((req.url == "/api/login" || req.url == "/login") &&
 		req.method == "POST") {
 		if (req.body != null && 
-			req.body.name == USERNAME &&
+			req.body.username == USERNAME &&
 			req.body.password == PASSWORD) {
 			let token = jwt.sign({data: USERNAME, expiresIn: "1h"},
 				APP_SECRET);
@@ -16,8 +16,12 @@ module.exports = (req, res, next) => {
 			res.statusCode = 200;
 			res.end();
 			return;	
+		} else {
+			res.statusCode = 401;
+			res.end();
+			return;
 		}
-	} else if((req.url == "/api/products" || req.url == "/products") &&
+	} else if((req.url == "/api/products" || req.url == "/products") && 
 		req.method == "GET") {
 		let token = req.headers["authorization"];
 		if(token != null && token.startsWith("Bearer")) {
@@ -27,11 +31,14 @@ module.exports = (req, res, next) => {
 				next();
 				return;
 			} catch (err) {
-				console.log(err);
 				res.statusCode = 401;
 				res.end();
 				return;
 			}
+		} else {
+			res.statusCode = 401;
+			res.end();
+			return;
 		}
 	}
 	res.statusCode = 404;
