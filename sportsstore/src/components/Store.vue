@@ -6,11 +6,11 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-3 bg-info p-2">
-				<h4 class="text-white m-2">Categories</h4>
+			<div class="col-2 bg-info p-2">
+				<CategoryControls/>
 			</div>
-			<div class="col-9 bg-success p-2">
-				<product-list/>
+			<div class="col-10 p-2">
+				<ProductList/>
 			</div>
 		</div>
 	</div>
@@ -19,9 +19,10 @@
 <script>
 	
 import ProductList from "@/components/ProductList";
+import CategoryControls from "@/components/CategoryControls";
 
 export default {
-	components: {ProductList}
+	components: {ProductList, CategoryControls}
 }
 
 </script>
