@@ -4,6 +4,6 @@
     "jsonwebtoken": "^8.5.1"
   },
   "scripts": {
-    "json": "json-server -p 3500 --watch db.json --routes routes.json --static ./public/ --middlewares hello.js"
+    "json": "json-server -p 3500 --watch db.json hello.js --routes routes.json --static ./public/ --middlewares hello.js"
   }
 }

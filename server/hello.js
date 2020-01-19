@@ -23,23 +23,29 @@ module.exports = (req, res, next) => {
 		}
 	} else if((req.url == "/api/products" || req.url == "/products") && 
 		req.method == "GET") {
-		let token = req.headers["authorization"];
-		if(token != null && token.startsWith("Bearer")) {
-			token = token.substring(7, token.length);
-			try {
-				jwt.verify(token, APP_SECRET);
-				next();
-				return;
-			} catch (err) {
-				res.statusCode = 401;
-				res.end();
-				return;
-			}
-		} else {
-			res.statusCode = 401;
-			res.end();
-			return;
-		}
+		next();
+		return;
+		// let token = req.headers["authorization"];
+		// if(token != null && token.startsWith("Bearer")) {
+		// 	token = token.substring(7, token.length);
+		// 	try {
+		// 		jwt.verify(token, APP_SECRET);
+		// 		next();
+		// 		return;
+		// 	} catch (err) {
+		// 		res.statusCode = 401;
+		// 		res.end();
+		// 		return;
+		// 	}
+		// } else {
+		// 	res.statusCode = 401;
+		// 	res.end();
+		// 	return;
+		// }
+	} else if((req.url == "/api/categories" || req.url == "/categories") &&
+		req.method == "GET") {
+		next();
+		return;
 	}
 	res.statusCode = 404;
 	res.end();

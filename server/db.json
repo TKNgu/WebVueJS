@@ -85,5 +85,6 @@
       "description": "Gold-plated, diamond-studded King",
       "price": 1200
     }
-  ]
+  ],
+  "categories": ["Chess", "Soccer", "Watersports"]
 }
