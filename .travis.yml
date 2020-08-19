@@ -6,9 +6,7 @@ services:
 
 before_install:
 - docker pull node:lts
-- docker run node:lts /bin/sh -c "cd /root/sinatra; bundle exec foreman start;"
-- docker ps -a
-- docker run carlad/sinatra /bin/sh -c "cd /root/sinatra; bundle exec rake test"
-
+- docker run -it --rm -v TKNgu/WebVueJS:/TKNgu/WebVueJS -w /TKNgu/WebVueJS node:lts \
+    bash -c "cd todo; yarn install; yarn build"
 script:
 - bundle exec rake test
