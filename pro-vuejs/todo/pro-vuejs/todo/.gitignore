@@ -21,11 +21,3 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
-node_modules/*
-pro-vuejs/node_modules/*
-server/node_modules/*
-server/yarn.lock
-sportsstore/node_modules/*
-sportsstore/yarn.lock
-node_modules/*
-pro-vuejs/node_modules/*

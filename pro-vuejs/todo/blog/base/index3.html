@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Components</title>
+	<script type="text/javascript" src="vue.js"></script>
+</head>
+<body>
+	<div id="app1">
+		<div>
+			<p>{{ title }}</p>
+		</div>
+	</div>
+	<div id="app2">
+		<ul>
+			<li v-for="post in posts">
+				<button-counter v-bind:post="post" v-bind:key="post.id"></button-counter>
+			</li>
+		</ul>
+
+		<ul>
+			<li v-for="post in posts">
+				<blog-post v-bind:post="post" v-on:enlarge-text="action($event)"></blog-post>
+			</li>
+		</ul>
+		<login v-bind:user_info="user_info" v-on:login_user="login"></login>
+		<input v-bind:value="text_edit" v-on:input="show($event.target.value)"></input>
+		<model_sample v-model="sample">Value</model_sample>
+	</div>
+	<div id="app3">
+		<div>
+			<sample></sample>
+		</div>
+		<div>
+			<p>Show</p>
+			<component v-bind:is="name"></component>
+		</div>
+<!-- 		<div>
+			<button v-on:click="name_component='button-counter'">Button</button>
+		</div> -->
+	</div>
+
+<!--     <div id="dynamic-component-demo" class="demo">
+      <button
+        v-for="tab in tabs"
+        v-bind:key="tab"
+        v-bind:class="['tab-button', { active: currentTab === tab }]"
+        v-on:click="currentTab = tab"
+      >
+        {{ tab }}
+      </button>
+
+      <component v-bind:is="tab-archive" class="tab"></component>
+    </div> -->
+
+	<script type="text/javascript" src="components.js"></script>
+</body>
+</html>
