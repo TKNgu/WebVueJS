@@ -5,9 +5,8 @@ services:
   - docker
 
 before_install:
-- ls
 - docker pull node:lts
-- docker run -it --rm -v $PWD:/WebVueJS -w /WebVueJS node:lts
+- docker run -it --rm -v $PWD/pro-vuejs/todo:/todo/ -w /todo/ node:lts
     bash -c "cd todo; yarn install; yarn build"
 script:
 - bundle exec rake test
