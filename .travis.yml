@@ -6,7 +6,7 @@ services:
 
 before_install:
 - docker pull node:lts
-- docker run -it --rm -v $PWD/TKNgu/WebVueJS:/TKNgu/WebVueJS -w /TKNgu/WebVueJS node:lts \
+- docker run -it --rm -v $PWD/TKNgu/WebVueJS:/TKNgu/WebVueJS -w /TKNgu/WebVueJS node:lts
     bash -c "cd todo; yarn install; yarn build"
 script:
 - bundle exec rake test
