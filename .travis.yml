@@ -6,7 +6,6 @@ services:
 
 before_install:
 - docker pull node:lts
+script:
 - docker run -it --rm -v $PWD/pro-vuejs/todo:/todo/ -w /todo/ node:lts
     bash -c "yarn install; yarn build"
-script:
-- bundle exec rake test
