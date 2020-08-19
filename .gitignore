@@ -21,18 +21,11 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
-<<<<<<< HEAD
 node_modules/*
 pro-vuejs/node_modules/*
-=======
-
 server/node_modules/*
 server/yarn.lock
 sportsstore/node_modules/*
 sportsstore/yarn.lock
-<<<<<<< HEAD
->>>>>>> Update server.
-=======
 node_modules/*
 pro-vuejs/node_modules/*
->>>>>>> Start.
