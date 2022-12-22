@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "json-server": "^0.15.1",
-    "jsonwebtoken": "^8.5.1"
+    "jsonwebtoken": "^9.0.0"
   },
   "scripts": {
     "json": "json-server -p 3500 --watch db.json --routes routes.json --static ./public/ --middlewares hello.js"
